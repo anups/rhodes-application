@@ -1,0 +1,41 @@
+<div data-role="page">
+
+  <div data-role="header" data-position="inline">
+    <h1>Edit <%= @project.project_code %></h1>
+    <a href="<%= url_for :action => :show, :id => @project.object %>" class="ui-btn-left" data-icon="back" data-direction="reverse">
+      Cancel
+    </a>
+    <a href="<%= url_for :action => :delete, :id => @project.object %>" class="ui-btn-right" data-icon="delete" data-direction="reverse">
+      Delete
+    </a>
+  </div>
+
+  <div data-role="content">
+    <form method="POST" action="<%= url_for :action => :update %>">
+      <input type="hidden" name="id" value="<%= @project.object %>"/>
+      
+          <div data-role="fieldcontain">
+            <label for="project[project_code]" class="fieldLabel">Project code</label>
+            <input type="text" id="project[project_code]" name="project[project_code]" value="<%= @project.project_code %>" <%= placeholder( "Project code" ) %> />
+          </div>
+      
+          <div data-role="fieldcontain">
+            <label for="project[project_name]" class="fieldLabel">Project name</label>
+            <input type="text" id="project[project_name]" name="project[project_name]" value="<%= @project.project_name %>" <%= placeholder( "Project name" ) %> />
+          </div>
+      
+          <div data-role="fieldcontain">
+            <label for="project[project_description]" class="fieldLabel">Project description</label>
+            <input type="text" id="project[project_description]" name="project[project_description]" value="<%= @project.project_description %>" <%= placeholder( "Project description" ) %> />
+          </div>
+      
+          <div data-role="fieldcontain">
+            <label for="project[project_duration]" class="fieldLabel">Project duration</label>
+            <input type="text" id="project[project_duration]" name="project[project_duration]" value="<%= @project.project_duration %>" <%= placeholder( "Project duration" ) %> />
+          </div>
+      
+      <input type="submit" value="Update"/>
+    </form>
+  </div>
+
+</div>

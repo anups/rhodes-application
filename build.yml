@@ -1,0 +1,25 @@
+sdkversion: "3.3.3"
+name: "projectapp"
+version: "1.0"
+vendor: "rhomobile"
+build: "debug"
+bbver: "4.6"
+applog: "rholog.txt"
+iphone:
+  configuration: "Release"
+  sdk: "iphonesimulator5.0"
+  provisionprofile: 
+  codesignidentity: 
+  entitlements: 
+  BundleIdentifier: "com.rhomobile.projectapp"
+  BundleURLScheme: "projectapp"
+wp:
+  productid: "c7a933c0-aa15-012f-93c4-0c60769b8bdb"
+symbian:
+  uid: "0xeecfd59a"
+android:
+  version: "2.1"
+extensions:
+  - json
+  - another-extension
+app_type: "rhoelements"

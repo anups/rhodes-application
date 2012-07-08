@@ -1,0 +1,41 @@
+<div data-role="page">
+
+  <div data-role="header" data-position="inline">
+    <h1>Edit <%= @developer.developer_code %></h1>
+    <a href="<%= url_for :action => :show, :id => @developer.object %>" class="ui-btn-left" data-icon="back" data-direction="reverse">
+      Cancel
+    </a>
+    <a href="<%= url_for :action => :delete, :id => @developer.object %>" class="ui-btn-right" data-icon="delete" data-direction="reverse">
+      Delete
+    </a>
+  </div>
+
+  <div data-role="content">
+    <form method="POST" action="<%= url_for :action => :update %>">
+      <input type="hidden" name="id" value="<%= @developer.object %>"/>
+      
+          <div data-role="fieldcontain">
+            <label for="developer[developer_code]" class="fieldLabel">Developer code</label>
+            <input type="text" id="developer[developer_code]" name="developer[developer_code]" value="<%= @developer.developer_code %>" <%= placeholder( "Developer code" ) %> />
+          </div>
+      
+          <div data-role="fieldcontain">
+            <label for="developer[developer_name]" class="fieldLabel">Developer name</label>
+            <input type="text" id="developer[developer_name]" name="developer[developer_name]" value="<%= @developer.developer_name %>" <%= placeholder( "Developer name" ) %> />
+          </div>
+      
+          <div data-role="fieldcontain">
+            <label for="developer[developer_status]" class="fieldLabel">Developer status</label>
+            <input type="text" id="developer[developer_status]" name="developer[developer_status]" value="<%= @developer.developer_status %>" <%= placeholder( "Developer status" ) %> />
+          </div>
+      
+          <div data-role="fieldcontain">
+            <label for="developer[developer_dob]" class="fieldLabel">Developer dob</label>
+            <input type="text" id="developer[developer_dob]" name="developer[developer_dob]" value="<%= @developer.developer_dob %>" <%= placeholder( "Developer dob" ) %> />
+          </div>
+      
+      <input type="submit" value="Update"/>
+    </form>
+  </div>
+
+</div>
